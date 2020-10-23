@@ -1,0 +1,86 @@
+#### general settings
+name: Conv_Tasnet
+use_tb_logger: true
+num_spks: 2
+manual_seed: None
+#### datasets
+datasets:
+  tgt_train:
+    dataroot_mix:
+
+  tgt_val:
+    dataroot_mix:
+    dataroot_targets: []
+
+  train:
+    dataroot_mix:
+    dataroot_targets: []
+
+  val:
+    dataroot_mix:
+    dataroot_targets: []
+  
+  dataloader_setting:
+    shuffle: true
+    num_workers: 0  # per GPU
+    batch_size: 4
+  
+  audio_setting:
+    sample_rate: 8000
+    chunk_size: 24000
+    least_size: 12000
+    
+
+#### network structures
+Conv_Tasnet:
+  N: 512
+  L: 16
+  B: 128
+  H: 512
+  P: 3
+  X: 8
+  R: 3
+  norm: gln
+  num_spks: 2
+  activate: relu
+  causal: false
+
+#### training settings: learning rate scheme, loss
+train:
+  src_encoder:
+  separation:
+  theta: None
+  epoch: 2
+  early_stop: 10
+  path: /27T/datasets/lunwen/conv-tasnet/code/final_code/923/vctk_cdms_1000_2r_print150/checkpoint
+  gpuid: [0,1,2,3]
+
+#### Optimizer settings
+optim:
+  name: Adam   ### Adam, RMSprop, SGD
+  e_lr: !!float 0.000005
+  d_lr: !!float 0.000005
+  momentum: 0.9
+  weight_decay: !!float 1e-5
+  clip_norm: 10
+
+#### scheduler settings
+scheduler:
+  min_lr: !!float 1e-8
+  patience: 2
+  factor: 0.5
+
+#### Resume training settings
+resume:
+  state: true
+  path: /27T/datasets/lunwen/conv-tasnet/code/final_code/923/vctk_cdms_1000_2r_print150/checkpoint/Conv_Tasnet/best_100epoch.pt
+
+
+#### logger
+logger:
+  name: Conv_Tasnet
+  path: /27T/datasets/lunwen/conv-tasnet/code/final_code/923/vctk_cdms_1000_2r_print150/checkpoint/log
+  screen: true
+  tofile: true
+  print_freq: 150
+  log_dir: /27T/datasets/lunwen/conv-tasnet/code/final_code/923/vctk_cdms_1000_2r_print150/log/Conv_Tasnet/logs
