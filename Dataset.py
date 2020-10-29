@@ -44,8 +44,6 @@ class Datasets_tgt(Dataset):
         super(Datasets_tgt, self).__init__()
         self.mix_audio = AudioReader(
             mix_scp, sample_rate=sample_rate, chunk_size=chunk_size, least_size=least_size).audio
-        # self.ref_audio = [AudioReader(
-        #     r, sample_rate=sample_rate, chunk_size=chunk_size, least_size=least_size).audio for r in ref_scp]
 
     def __len__(self):
         return len(self.mix_audio)

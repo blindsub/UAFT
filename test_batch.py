@@ -71,8 +71,8 @@ class Separation():
 					#norm
 					s = s*norm/torch.max(torch.abs(s))
 					# s = s.unsqueeze(0)
-					s = torch.squeeze(s)  # 改   
-					s = s.numpy()  # 改
+					s = torch.squeeze(s)
+					s = s.numpy()
 					index += 1
 					os.makedirs(file_path+'/spk'+str(index), exist_ok=True)
 				
@@ -88,15 +88,15 @@ def main():
 	parser.add_argument(
 		'-yaml', type=str, default='config/Conv_Tasnet/train.yml', help='Path to yaml file.')
 	parser.add_argument(
-		'-model', type=str, default=r'/27T/datasets/lunwen/conv-tasnet/code/convtasnet_adda_vctk__cdms_moreval_dropout_hardlabel_reverselabel_1000/checkpoint/Conv_Tasnet/best.pt', help="Path to model file.")
+		'-model', type=str, default='', help="Path to model file.")
 	parser.add_argument(
 		'-gpuid', type=str, default='0', help='Enter GPU id number')
 	parser.add_argument(
 		'-save_path', type=str, default='model_vctk2cdms_adda', help='save result path')
 	parser.add_argument(
-		'-clean_path_1', type=str, default=r'/27T/datasets/lunwen/speechdatasets/convtasnet/chinese/test_cmds/w1')
+		'-clean_path_1', type=str, default='', help='Path to spk1 scp file.')
 	parser.add_argument(
-		'-clean_path_2', type=str, default=r'/27T/datasets/lunwen/speechdatasets/convtasnet/chinese/test_cmds/w2')
+		'-clean_path_2', type=str, default='', help='Path to spk2 scp file.')
 	args = parser.parse_args()
 	gpuid=[int(i) for i in args.gpuid.split(',')]
 	separation=Separation(args.mix_scp, args.yaml, args.model, gpuid)

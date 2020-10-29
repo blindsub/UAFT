@@ -53,9 +53,3 @@ class Datasets_tgt(Dataset):
     def __getitem__(self, index):
         return self.mix_audio[index]
 
-if __name__ == "__main__":
-    dataset = Datasets("/home/likai/data1/create_scp/cv_mix.scp",
-                      ["/home/likai/data1/create_scp/cv_s1.scp", "/home/likai/data1/create_scp/cv_s2.scp"])
-    for i in dataset.mix_audio:
-        if i.shape[0] != 32000:
-            print('fail')

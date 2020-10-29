@@ -85,13 +85,13 @@ tgt_cv_mix_scp = 'tgt_cv_mix.scp'
 tgt_cv_s1_scp = 'tgt_cv_s1.scp'
 tgt_cv_s2_scp = 'tgt_cv_s2.scp'
 
-tgt_cv_mix = ''
-tgt_cv_s1 = ''
-tgt_cv_s2 = ''
+tgt_cv_mix = ''  # path of target validation mixture
+tgt_cv_s1 = ''  # path of target validation spk1
+tgt_cv_s2 = ''  # path of target validation spk2
 
-cv_mix = ''
-cv_s1 = ''
-cv_s2 = ''
+cv_mix = ''  # path of source validation mixture
+cv_s1 = ''  # path of target validation spk1
+cv_s2 = ''  # path of target validation spk2
 
 
 

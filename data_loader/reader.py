@@ -8,4 +8,4 @@ def read_wav(fname, return_rate=False):
         return src.squeeze()
 
 def write_wav(fname, src, sample_rate):
-	librosa.output.write_wav(fname, src, sample_rate)
+    librosa.output.write_wav(fname, src, sample_rate)

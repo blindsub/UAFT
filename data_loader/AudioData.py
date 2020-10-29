@@ -1,10 +1,8 @@
 import torch.nn.functional as F
 from utils import util
-import torch
 import torchaudio
 import sys
 sys.path.append('../')
-import librosa
 
 
 def read_wav(fname, return_rate=False):
@@ -25,11 +23,6 @@ def read_wav(fname, return_rate=False):
     else:
         return src.squeeze()
 
-    # src, sr = librosa.load(fname, sr=8000)
-    # if return_rate:
-    #     return src.squeeze(), sr
-    # else:
-    #     return src.squeeze()
 
 
 def write_wav(fname, src, sample_rate):
@@ -43,7 +36,6 @@ def write_wav(fname, src, sample_rate):
                None
     '''
     torchaudio.save(fname, src, sample_rate)
-    # librosa.output.write_wav(fname, src, sample_rate)
 
 
 class AudioReader(object):
@@ -89,7 +81,4 @@ class AudioReader(object):
 
 
 
-if __name__ == "__main__":
-    a = AudioReader("/home/likai/data1/create_scp/cv_mix.scp")
-    audio = a.audio
-    print(len(audio))
+
