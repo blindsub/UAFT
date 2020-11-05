@@ -9,8 +9,8 @@ PyTorch implementation of unsupervised adversarial fine-tuning on Conv-TasNet
    `pip install -r requirements.txt`
    
 ## Dataset
-1. source domain datasets:VCTK
-2. target domain darasets:ST-CMDS,THCHS-30
+1. source domain datasets:[VCTK](https://datashare.is.ed.ac.uk/handle/10283/3443)
+2. target domain darasets:[ST-CMDS](https://www.openslr.org/38/),[THCHS-30](https://www.openslr.org/18/)
    
 ## Pre-training
    We use [PyTorch implementation of Conv-TasNet](https://github.com/JusperLee/Dual-Path-RNN-Pytorch) to get well-trained model on VCTK datasets.
