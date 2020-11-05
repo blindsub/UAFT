@@ -18,6 +18,6 @@ PyTorch implementation of unsupervised adversarial fine-tuning on Conv-TasNet
    
 ## adversarial fine-tuning
    After generator mixture speech of source domain and target domain for training, and create the scp file of them.
-   You can edit `train.yml` with corresponding file path and run the following command to start trainging.
+   You can edit `train.yml` with corresponding file path and run the following command to start training.
    
    `python train_Tasnet.py --opt config/Conv_Tasnet/train.yml`
