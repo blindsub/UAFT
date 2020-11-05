@@ -8,7 +8,7 @@ PyTorch implementation of unsupervised adversarial fine-tuning on Conv-TasNet
    
    `pip install -r requirements.txt`
    
-## Dataset
+## Datasets
 1. Source domain datasets: [VCTK](https://datashare.is.ed.ac.uk/handle/10283/3443)
 2. Target domain darasets: [ST-CMDS](https://www.openslr.org/38/),[THCHS-30](https://www.openslr.org/18/)
    
