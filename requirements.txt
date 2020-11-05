@@ -1,0 +1,12 @@
+torchvision==0.3.0
+matplotlib==3.0.3
+torch==1.1.0
+librosa==0.6.3
+pystoi==0.3.3
+numpy==1.16.2
+tqdm==4.31.1
+mir_eval==0.5
+pypesq==1.2.4
+PyYAML==5.3.1
+tensorboardX==2.1
+torchaudio==0.7.0
